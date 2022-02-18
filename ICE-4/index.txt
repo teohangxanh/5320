@@ -1,0 +1,92 @@
+mport React from 'react';
+import ReactDOM from 'react-dom';
+import { arc } from 'd3';
+
+const width = 960;
+const height = 500;
+const centerX = width / 2;
+const centerY = height / 2;
+const strokeWidth = 10;
+const eyeOffsetX = 90;
+const eyeOffsetY = 70;
+const eyeRadius = 30;
+const earRadius = 50;
+const noseOffsetY = 30;
+const noseOffsetX = 3;
+const earOffsetX = 200;
+const earOffsetY = 220;
+const mouthWidth = 20;
+const mouthRadius = 140;
+
+
+const mouthArc = arc()
+  .innerRadius(mouthRadius)
+  .outerRadius(mouthRadius + mouthWidth)
+  .startAngle(Math.PI / 1.6)
+  .endAngle(Math.PI * 1.37);
+
+const App = () => (
+    <svg width={width} height={height}>
+    	<circle 
+        cx={centerX}
+        cy={centerY}
+        r={centerY - (strokeWidth / 2)}
+        fill="yellow"
+        stroke="black"
+        strokeWidth={strokeWidth}
+      />
+    	<circle 
+        cx={centerX - eyeOffsetX}
+        cy={centerY - eyeOffsetY}
+        r={eyeRadius}
+			/>
+      <circle 
+        cx={centerX + eyeOffsetX}
+        cy={centerY - eyeOffsetY}
+        r={eyeRadius}
+      />
+    	<circle 
+        cx={centerX + noseOffsetX}
+        cy={centerY + noseOffsetY}
+        r={eyeRadius * 2}
+        fill='white'
+        stroke="red"
+        strokeWidth={strokeWidth}
+      />
+  		<circle 
+        cx={centerX + noseOffsetX + 20}
+        cy={centerY + noseOffsetY}
+        r={eyeRadius / 2}
+        fill='magenta'
+      />
+    <circle 
+        cx={centerX + noseOffsetX - 20}
+        cy={centerY + noseOffsetY}
+        r={eyeRadius / 2}
+        fill='magenta'
+		/>
+    <circle 
+        cx={centerX - earOffsetX}
+        cy={centerY - earOffsetY}
+        r={earRadius}
+        fill='pink'
+      	stroke="black"
+      	strokeWidth={strokeWidth}
+		/>
+    <circle 
+        cx={centerX + earOffsetX}
+        cy={centerY - earOffsetY}
+        r={earRadius}
+        fill='pink'
+      	stroke="black"
+      	strokeWidth={strokeWidth}
+		/>
+    <g transform={`translate(${centerX},${centerY})`}>
+    	<path d={mouthArc()}/>
+    </g>
+    </svg>
+);
+
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(<App />, rootElement);
