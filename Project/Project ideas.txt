@@ -1,6 +1,0 @@
-https://www.kaggle.com/yellowj4acket/real-estate-california
-https://www.kaggle.com/meetnagadia/international-debt-statistics-jan-2022
-https://www.kaggle.com/yamqwe/global-climate-change-datae?select=GlobalTemperatures.csv
-https://www.kaggle.com/kalilurrahman/atp-tennis-player-ranking-dataset
-https://www.kaggle.com/pyatakov/india-agriculture-crop-production
-https://www.kaggle.com/yekahaaagayeham/job-interview-assignments-test
