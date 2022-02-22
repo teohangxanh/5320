@@ -1,0 +1,31 @@
+title {
+    font-size: 5em;
+    text-align: center;
+    background-color: yellow;
+}
+
+img {
+    height: 500px;
+    width: 500px;
+    text-align: center;
+}
+
+.message {
+    font-size: 5em;
+    text-align: center;
+    background-color: yellow;
+}
+
+pre {
+    font-size: 5em;
+    text-align: center;
+    background-color: burlywood;
+}
+
+h1 {
+    color: magenta;
+}
+
+h2 {
+    color: blue;
+}

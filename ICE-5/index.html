@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="index.css" rel="stylesheet">
+    <title>ICE-5 Nghia Dang</title>
+    <script src='https://unpkg.com/d3@7.3.0/dist/d3.min.js'></script>
+</head>
+
+<body>
+    <link href="index.css" rel="'stylesheet" />
+    <div class="message">ICE-5 Nghia Dang</div>
+    <h1> What do you call two birds in love?</h1>
+    <h2>Tweethearts</h2>
+    <pre id='message-container'></pre>
+    <script>
+        const csv_url = 'https://raw.githubusercontent.com/teohangxanh/5320/main/ICE-5/fake_data.csv'
+            // With d3.csv
+        d3.csv(csv_url).then(data => {
+            let message = 'The data contains: \n';
+            message += Math.round(d3.csvFormat(data).length / 1024) + ' kb\n';
+            message += data.length + ' rows\n';
+            message += 'and ' + data.columns.length + ' columns.';
+            document.getElementById('message-container').textContent = message;
+        });
+    </script>
+    <div style="text-align: center;">
+        <img src="Piggie.svg" alt="My portrait" class="handsome">
+    </div>
+</body>
+
+</html>
